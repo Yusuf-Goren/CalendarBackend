@@ -3,7 +3,6 @@ from pydoc import doc
 from re import I
 from tokenize import endpats
 from tracemalloc import start
-from turtle import title
 from flask import abort, jsonify, make_response, request
 from model import About, Blog, Meeting, User
 from app import db
