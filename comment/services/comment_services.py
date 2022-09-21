@@ -18,7 +18,8 @@ def get_doctor_comments(current_user, doctor_id):
             "name": user.name,
             "surname": user.surname,
             "text": item.text,
-            "patient_id": item.patient_id
+            "patient_id": item.patient_id,
+            "created_at": item.created_at
         })
 
     return jsonify(items)
