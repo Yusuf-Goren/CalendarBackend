@@ -9,7 +9,7 @@ app = Flask(__name__)
 CORS(app)
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:123456@localhost/calendarapp'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://rqxzwuljlogffz:603e2b9c34c53c44279d5e597f05113e8820c8c204bf308a09769072a1e58223@ec2-3-93-206-109.compute-1.amazonaws.com:5432/d1ap1qq01tad9d'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://rqxzwuljlogffz:603e2b9c34c53c44279d5e597f05113e8820c8c204bf308a09769072a1e58223@ec2-3-93-206-109.compute-1.amazonaws.com:5432/d1ap1qq01tad9d'
 app.config['SECRET_KEY'] = 'secretKey'
 
 
