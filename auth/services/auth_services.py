@@ -4,7 +4,7 @@ from sqlalchemy import or_
 from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
 import datetime
-from model import User, Role
+from model import User
 from app import db, app
 from http.client import BAD_REQUEST
 
@@ -33,18 +33,18 @@ def register(request):
     user = User(name, surname, email, password, phone)
 
     db.session.add(user)
-    patient = Role.query.filter(Role.id == 1).first()
-    doctor = Role.query.filter(Role.id == 2).first()
-    if(isPat):
-        user.assignment.append(patient)
-    elif(isDoc):
-        user.assignment.append(doctor)
-    else:
-        return make_response(
-            'Could not verify',
-            401,
-            {'WWW-Authenticate': 'At least one of an assignment must select"'}
-        )
+    # patient = Role.query.filter(Role.id == 1).first()
+    # doctor = Role.query.filter(Role.id == 2).first()
+    # if(isPat):
+    #     user.assignment.append(patient)
+    # elif(isDoc):
+    #     user.assignment.append(doctor)
+    # else:
+    #     return make_response(
+    #         'Could not verify',
+    #         401,
+    #         {'WWW-Authenticate': 'At least one of an assignment must select"'}
+    #     )
 
     db.session.commit()
     return {'message': '{user.assignment} created'}
