@@ -3,11 +3,11 @@ from email.policy import default
 from app import db
 from datetime import datetime
 
-user_role = db.Table('user_role',
-                     db.Column('user_id', db.Integer,
-                               db.ForeignKey('users.id')),
-                     db.Column('role_id', db.Integer,
-                               db.ForeignKey('roles.id')))
+# user_role = db.Table('user_role',
+#                      db.Column('user_id', db.Integer,
+#                                db.ForeignKey('users.id')),
+#                      db.Column('role_id', db.Integer,
+#                                db.ForeignKey('roles.id')))
 
 
 class User(db.Model):
@@ -18,8 +18,8 @@ class User(db.Model):
     email = db.Column(db.String(40), nullable=False)
     password = db.Column(db.String(200), nullable=False)
     phone = db.Column(db.String(40), nullable=False)
-    assignment = db.relationship(
-        'Role', secondary=user_role, backref="assignments")
+    # assignment = db.relationship(
+    #     'Role', secondary=user_role, backref="assignments")
 
     def __init__(self, name, surname, email, password, phone):
         self.name = name
